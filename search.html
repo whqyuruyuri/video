@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>本地多站点搜索</title>
+    <script>
+        function search() {
+            const keyword = document.getElementById('keyword').value;
+            const sites = [
+                'https://whqyuruyuri.github.io/filelist/filealist.html/search?q=',
+          
+            ];
+            // 在新标签页打开每个站点的搜索结果
+            sites.forEach(site => {
+                window.open(site + encodeURIComponent(keyword), '_blank');
+            });
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="keyword" placeholder="输入关键词">
+    <button onclick="search()">搜索</button>
+    <p>将同时搜索：example1.com 和 example2.com</p >
+</body>
+</html>
